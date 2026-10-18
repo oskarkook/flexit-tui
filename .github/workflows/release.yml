@@ -48,7 +48,7 @@ jobs:
       - name: Create release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" dist/* --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
+        run: gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" dist/* --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
 
   flatpak:
     name: Flatpak (${{ matrix.arch }})
@@ -96,6 +96,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release download "$GITHUB_REF_NAME" --pattern checksums.txt --dir dist
+          gh release download "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --pattern checksums.txt --dir dist
           (cd dist && sha256sum *.flatpak >> checksums.txt)
-          gh release upload "$GITHUB_REF_NAME" dist/*.flatpak dist/checksums.txt --clobber
+          gh release upload "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" dist/*.flatpak dist/checksums.txt --clobber
