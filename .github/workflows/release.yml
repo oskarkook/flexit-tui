@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      - name: Test
+        run: go test ./...
+
+      - name: Build
+        env:
+          CGO_ENABLED: "0"
+          VERSION: ${{ github.ref_name }}
+        run: |
+          mkdir dist
+          for target in linux/amd64 linux/arm64 darwin/amd64 darwin/arm64 windows/amd64 windows/arm64; do
+            goos=${target%/*}
+            goarch=${target#*/}
+            name="flexit-${VERSION}-${goos}-${goarch}"
+            ext=""
+            [ "$goos" = windows ] && ext=".exe"
+            mkdir "dist/$name"
+            GOOS=$goos GOARCH=$goarch go build -trimpath -ldflags="-s -w" -o "dist/$name/flexit$ext" ./cmd/flexit
+            cp README.md "dist/$name/"
+            if [ "$goos" = windows ]; then
+              (cd dist && zip -qr "$name.zip" "$name")
+            else
+              tar -C dist -czf "dist/$name.tar.gz" "$name"
+            fi
+            rm -r "dist/$name"
+          done
+          (cd dist && sha256sum * > checksums.txt)
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" dist/* --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
