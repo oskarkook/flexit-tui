@@ -33,14 +33,14 @@ type State struct {
 	path string
 }
 
-// Path returns the state file location ($XDG_CONFIG_HOME/flexit/state.json
+// Path returns the state file location ($XDG_CONFIG_HOME/flexit-tui/state.json
 // or the platform equivalent).
 func Path() (string, error) {
 	dir, err := os.UserConfigDir()
 	if err != nil {
 		return "", err
 	}
-	return filepath.Join(dir, "flexit", "state.json"), nil
+	return filepath.Join(dir, "flexit-tui", "state.json"), nil
 }
 
 // Load reads the state file; a missing file yields an empty state.
