@@ -1,0 +1,140 @@
+[
+  {
+    "dest": "vendor",
+    "path": "modules.txt",
+    "type": "file"
+  },
+  {
+    "dest": "vendor/charm.land/bubbles/v2",
+    "sha256": "64292cdc965e4cdd81fae7b9b26f77ced179321ab014f49a442b4789078b0024",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/charm.land/bubbles/v2/@v/v2.2.1.zip"
+  },
+  {
+    "dest": "vendor/charm.land/bubbletea/v2",
+    "sha256": "d9d17cf9b480bc63a3b4c5fc463569d4874e8ab1f8d40db55dda3efa3033fed4",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/charm.land/bubbletea/v2/@v/v2.1.0.zip"
+  },
+  {
+    "dest": "vendor/charm.land/lipgloss/v2",
+    "sha256": "26b77e3a8159d4d084d04a32c63db22cf9a48553d3eee1b488e478b1bb592c23",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/charm.land/lipgloss/v2/@v/v2.0.6.zip"
+  },
+  {
+    "dest": "vendor/github.com/atotto/clipboard",
+    "sha256": "d67b2c36c662751309fd2ec351df3651584bea840bd27be9a90702c3a238b43f",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/atotto/clipboard/@v/v0.1.4.zip"
+  },
+  {
+    "dest": "vendor/github.com/charmbracelet/colorprofile",
+    "sha256": "656472ff48f01a098418a31667f3253cf34e04d4e1cb6c1a0a80f76ad370b689",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/charmbracelet/colorprofile/@v/v0.4.3.zip"
+  },
+  {
+    "dest": "vendor/github.com/charmbracelet/ultraviolet",
+    "sha256": "87eb57acb5fec6e392f7b3d0a1b2766161637d426c72288b2912752bdaa55796",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/charmbracelet/ultraviolet/@v/v0.0.0-20261008173134-6b8d4baf91b4.zip"
+  },
+  {
+    "dest": "vendor/github.com/charmbracelet/x/ansi",
+    "sha256": "9815535699efc21636755cc84dbc92250182246e876e4ea83e87464d871cbf82",
+    "strip-components": 4,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/charmbracelet/x/ansi/@v/v0.11.9.zip"
+  },
+  {
+    "dest": "vendor/github.com/charmbracelet/x/term",
+    "sha256": "0452a430f7e6882393f81ba19a70a63709960acb9743e1199a7b04d908e6b506",
+    "strip-components": 4,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/charmbracelet/x/term/@v/v0.2.2.zip"
+  },
+  {
+    "dest": "vendor/github.com/charmbracelet/x/termios",
+    "sha256": "3dd9823ed5db08d398c276e216e4150560d3a6894814c4404251b4210b22abed",
+    "strip-components": 4,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/charmbracelet/x/termios/@v/v0.1.1.zip"
+  },
+  {
+    "dest": "vendor/github.com/charmbracelet/x/windows",
+    "sha256": "fb3f82357ad9a8a25a42dfa1880434149dd6fcc43e0b32a03664f72082ce5c2f",
+    "strip-components": 4,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/charmbracelet/x/windows/@v/v0.2.2.zip"
+  },
+  {
+    "dest": "vendor/github.com/clipperhouse/displaywidth",
+    "sha256": "27830c91cdfb2a648748db21f7a2734dcb50d21c620edde51d488ba4e7967e3d",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/clipperhouse/displaywidth/@v/v0.11.0.zip"
+  },
+  {
+    "dest": "vendor/github.com/clipperhouse/uax29/v2",
+    "sha256": "67b1278f1ffb4e4d783a390e48fe7396864650138e785d4b4bfca5914333f761",
+    "strip-components": 4,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/clipperhouse/uax29/v2/@v/v2.7.0.zip"
+  },
+  {
+    "dest": "vendor/github.com/lucasb-eyer/go-colorful",
+    "sha256": "399a71ecf3e3aaa0af96a779f1c106688b095dbfd0a85455a7c706d3d7ff9ebd",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/lucasb-eyer/go-colorful/@v/v1.4.1.zip"
+  },
+  {
+    "dest": "vendor/github.com/mattn/go-runewidth",
+    "sha256": "97c50f943241d593c40c447773cce738edf0b9db36d68aeadc32773a2103af1e",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/mattn/go-runewidth/@v/v0.0.30.zip"
+  },
+  {
+    "dest": "vendor/github.com/muesli/cancelreader",
+    "sha256": "f0654e7f8f8a49b02ff10a75ccaa0eb08a65aaacbc45f5ba93305276e2ac7f61",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/muesli/cancelreader/@v/v0.2.2.zip"
+  },
+  {
+    "dest": "vendor/github.com/rivo/uniseg",
+    "sha256": "b995e4aa0cc1e5779cc61138ac925cb8c1e963e40c80e4b93ee8553812ebb792",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/rivo/uniseg/@v/v0.4.7.zip"
+  },
+  {
+    "dest": "vendor/github.com/xo/terminfo",
+    "sha256": "64619407a02afce2f1fb1ba6889c134c73f1be573678d7db75045487e7833a8d",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/github.com/xo/terminfo/@v/v1.0.0.zip"
+  },
+  {
+    "dest": "vendor/golang.org/x/sync",
+    "sha256": "4bc67d258ce7867cfc1a43765c43d98b4c49b90c46dd0b86f896a5a4909fade0",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/golang.org/x/sync/@v/v0.22.0.zip"
+  },
+  {
+    "dest": "vendor/golang.org/x/sys",
+    "sha256": "cdac013ddced0262926ec29ffcda645da39670e61c7e5b761e572b6b1809bb1b",
+    "strip-components": 3,
+    "type": "archive",
+    "url": "https://proxy.golang.org/golang.org/x/sys/@v/v0.47.0.zip"
+  }
+]

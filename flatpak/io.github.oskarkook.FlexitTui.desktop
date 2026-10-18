@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Flexit
+Comment=Monitor and control Flexit Nordic ventilation units
+Exec=flexit
+Icon=io.github.oskarkook.FlexitTui
+Terminal=true
+Type=Application
+Categories=Utility;
+Keywords=ventilation;HVAC;BACnet;Flexit;

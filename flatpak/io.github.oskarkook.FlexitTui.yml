@@ -1,0 +1,41 @@
+app-id: io.github.oskarkook.FlexitTui
+runtime: org.freedesktop.Platform
+runtime-version: "26.08"
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.golang
+command: flexit
+branch: stable
+
+finish-args:
+  # BACnet/IP talks to the ventilation unit over the local network.
+  - --share=network
+
+modules:
+  - name: flexit
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/golang/bin
+      env:
+        CGO_ENABLED: "0"
+        GOFLAGS: "-mod=vendor"
+        GOPROXY: "off"
+        GOTOOLCHAIN: "local"
+    build-commands:
+      - go build -trimpath -buildvcs=false -ldflags="-s -w" -o flexit ./cmd/flexit
+      - install -Dm755 flexit /app/bin/flexit
+      - install -Dm644 io.github.oskarkook.FlexitTui.desktop -t /app/share/applications
+      - install -Dm644 io.github.oskarkook.FlexitTui.svg -t /app/share/icons/hicolor/scalable/apps
+    sources:
+      - type: git
+        url: https://github.com/oskarkook/flexit-tui.git
+        tag: v0.1.1
+
+      # Generated with:
+      #   go run github.com/dennwc/flatpak-go-mod@latest -out flatpak -json .
+      - go.mod.json
+
+      - type: file
+        path: io.github.oskarkook.FlexitTui.desktop
+      - type: file
+        path: io.github.oskarkook.FlexitTui.svg

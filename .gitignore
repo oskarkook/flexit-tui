@@ -5,3 +5,9 @@ venv/
 
 # built binary
 /flexit
+
+# flatpak build artifacts
+/.flatpak-builder/
+/flatpak_app/
+/repo/
+/*.flatpak
