@@ -33,12 +33,16 @@ type State struct {
 	path string
 }
 
-// Path returns the state file location ($XDG_CONFIG_HOME/flexit-tui/state.json
-// or the platform equivalent).
+// Path returns the state file location ($XDG_STATE_HOME/flexit-tui/state.json,
+// defaulting to ~/.local/state/flexit-tui/state.json).
 func Path() (string, error) {
-	dir, err := os.UserConfigDir()
-	if err != nil {
-		return "", err
+	dir := os.Getenv("XDG_STATE_HOME")
+	if !filepath.IsAbs(dir) {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			return "", err
+		}
+		dir = filepath.Join(home, ".local", "state")
 	}
 	return filepath.Join(dir, "flexit-tui", "state.json"), nil
 }
